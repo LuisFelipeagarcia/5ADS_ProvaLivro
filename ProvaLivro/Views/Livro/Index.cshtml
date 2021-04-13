@@ -1,0 +1,91 @@
+﻿@model IEnumerable<ProvaLivro.Models.Livro>
+
+@{
+    Layout = "_LayoutIES";
+}
+
+@section styles{
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+}
+<p>
+    <div class="card-header text-primary bg-light text-center h1">
+        Lista de Livros
+    </div>
+
+</p>
+<div class="card-body">
+    <table class="table table-striped" id="tabela-departamentos">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LivroID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CodLivro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Titulo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Autor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Editora)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Observacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descricao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Qtda)
+                </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LivroID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodLivro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Editora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qtda)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<p>
+    <a asp-action="Create" class="btn btn-primary"> Cadastrar Livro</a>
+</p>
+
+@section ScriptPage{
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+}
